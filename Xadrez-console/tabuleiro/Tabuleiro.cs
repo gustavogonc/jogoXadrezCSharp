@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 
-namespace Xadrez_console.tabuleiro
+namespace tabuleiro
 {
     public class Tabuleiro
     {
@@ -44,6 +44,18 @@ namespace Xadrez_console.tabuleiro
             }
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
+        }
+
+        public Peca retirarPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
         }
 
         public bool posicaoValida(Posicao pos)
