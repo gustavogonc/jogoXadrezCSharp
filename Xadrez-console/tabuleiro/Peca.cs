@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using tabuleiro;
-
+﻿
 namespace tabuleiro
 {
     public abstract class Peca
@@ -21,11 +15,16 @@ namespace tabuleiro
             this.cor = cor;
             this.qteMovimentos = 0;
         }
-        public void incrementarQteMoviemtnos()
+        public void incrementarQteMovimentos()
         {
             qteMovimentos++;
         }
-        
+
+        public void decrementarQteMovimentos()
+        {
+            qteMovimentos--;
+        }
+
         public bool existeMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
